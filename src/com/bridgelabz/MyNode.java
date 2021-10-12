@@ -6,8 +6,8 @@ package com.bridgelabz;
  * @param <T>
  */
 
-public class MyNode<T> {
-    private MyNode next;
+public class MyNode<T> implements INode<T> {
+    private INode<T> next;
     private T data;
     /**
      * setter method for making private
@@ -23,7 +23,7 @@ public class MyNode<T> {
      * Getter method for making private
      * @return
      */
-    public MyNode getNext() {
+    public INode<T> getNext() {
         return next;
     }
     public T getData() {
@@ -36,5 +36,26 @@ public class MyNode<T> {
     public MyNode(T data) {
         this.data=null;
         this.next=null;
+    }
+
+    @Override
+    public T getdata() {
+        return data;
+    }
+
+    @Override
+    public void setdata(T data) {
+        this.data=data;
+    }
+
+    @Override
+    public INode getnext() {
+        return next;
+    }
+
+    @Override
+    public void setnext(INode next) {
+        this.next = (INode<T>)next;
+
     }
 }
