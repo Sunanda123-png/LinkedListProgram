@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -29,5 +30,18 @@ public class MyNodeTest {
         boolean result=myLinkedList.head.equals(thirdNode) && myLinkedList.head.getnext().equals(secoundNode) &&
                 myLinkedList.tail.equals(firstNode);
         assertTrue(result);
+    }
+    @Test
+    public void Append(){
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secoundNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList=new MyLinkedList();
+        myLinkedList.append(firstNode);
+        myLinkedList.append(secoundNode);
+        myLinkedList.append(thirdNode);
+        boolean result=myLinkedList.tail.equals(thirdNode) && myLinkedList.tail.getnext().equals(secoundNode) &&
+                myLinkedList.head.equals(firstNode);
+        Assert.assertTrue(result);
     }
 }
