@@ -60,6 +60,37 @@ public class MyNodeTest {
                 linkedList.head.getnext().equals(secondNode) &&
                 linkedList.tail.equals(thirdNode);
 
-        Assert.assertTrue(result);
+        assertTrue(result);
+    }
+    @Test
+    public void popLinkedListTest() {
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secondNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+
+        MyLinkedList myLinkedList=new MyLinkedList();
+        myLinkedList.append(firstNode);
+        myLinkedList.append(secondNode);
+        myLinkedList.append(thirdNode);
+        myLinkedList.pop();
+
+
+        boolean result = myLinkedList.head.equals(secondNode) &&
+                myLinkedList.head.getnext().equals(myLinkedList.tail);
+        assertTrue(result);
+    }
+    @Test
+    public void givenElementWhenSearchingShouldPassLinkedListResult(){
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secoundNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList=new MyLinkedList();
+        myLinkedList.append(firstNode);
+        myLinkedList.append(secoundNode);
+        myLinkedList.append(thirdNode);
+        myLinkedList.searchMyNode();
+        boolean result=myLinkedList.tail.equals(thirdNode) && myLinkedList.tail.getnext().equals(secoundNode) &&
+                myLinkedList.head.equals(firstNode);
+        assertTrue(result);
     }
 }

@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class MyLinkedList {
+public class MyLinkedList<T> {
     public INode head;
     public INode tail;
 
@@ -38,5 +38,23 @@ public class MyLinkedList {
         INode tempNode=myNode.getnext();
         myNode.setnext(newNode);
         newNode.setnext(tempNode);
+    }
+    public INode pop()
+    {
+        INode tempNode=this.head;
+        this.head=head.getnext();
+        return  tempNode;
+    }
+    public void searchMyNode() {
+        INode tempNode = head;
+        int data= 30;
+        int position = 0;
+        while (tempNode != null) {
+            position++;
+            if (tempNode.getdata().equals(data)) {
+                System.out.println(position);
+            }
+            tempNode = tempNode.getnext();
+        }
     }
 }

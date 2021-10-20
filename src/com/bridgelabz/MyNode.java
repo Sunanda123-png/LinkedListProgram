@@ -34,7 +34,7 @@ public class MyNode<T> implements INode<T> {
      * @param data
      */
     public MyNode(T data) {
-        this.data=null;
+        this.data=data;
         this.next=null;
     }
 
